@@ -1,4 +1,6 @@
-/* NAPRAWA LOADERA */
+/* ==========================================================================
+   1. NAPRAWA LOADERA (Pasek ładowania na samej górze)
+   ========================================================================== */
 .loader-bar {
     position: fixed;
     top: 0;
@@ -15,7 +17,10 @@
     90% { width: 100%; opacity: 1; }
     100% { width: 100%; opacity: 0; } /* znika po zakończeniu */
 }
-/* FUNDAMENTY I TŁO */
+
+/* ==========================================================================
+   2. FUNDAMENTY I TŁO
+   ========================================================================== */
 body {
     margin: 0;
     padding: 0;
@@ -28,7 +33,9 @@ body {
     text-align: center;
 }
 
-/* NAWIGACJA BOCZNA - NAPRAWA */
+/* ==========================================================================
+   3. NAWIGACJA BOCZNA (Pływające przyciski social media)
+   ========================================================================== */
 .side-nav {
     position: fixed;
     top: 20px;
@@ -63,7 +70,9 @@ body {
     filter: brightness(0) invert(1);
 }
 
-/* HERO - CENTROWANIE */
+/* ==========================================================================
+   4. HERO (Główny nagłówek z Twoim awatarem)
+   ========================================================================== */
 .hero {
     padding: 100px 20px;
     display: flex;
@@ -79,10 +88,19 @@ body {
     box-shadow: 0 0 20px rgba(23, 147, 209, 0.4);
     width: 150px;
     height: 150px;
+    object-fit: cover; /* zapobiega zniekształceniom obrazka */
     margin-bottom: 20px;
 }
 
-/* SEKCJE I KARTY - CENTROWANIE */
+.subtitle {
+    min-height: 24px; /* zapobiega skakaniu layoutu podczas pisania maszynowego */
+    font-weight: 500;
+    color: #bbb;
+}
+
+/* ==========================================================================
+   5. SEKCJE I KARTY (Centrowanie i szklany efekt blur)
+   ========================================================================== */
 .services, .status-section, .team {
     border: 2px solid #1793d1;
     border-radius: 25px;
@@ -93,6 +111,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 0 20px rgba(23, 147, 209, 0.2);
     display: block;
+    box-sizing: border-box;
 }
 
 .card-grid, .team-grid {
@@ -113,6 +132,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .card:hover, .member:hover {
@@ -125,10 +145,60 @@ body {
     border-radius: 50%;
     width: 100px;
     height: 100px;
+    object-fit: cover;
     margin-bottom: 15px;
+    border: 2px solid #333;
 }
 
-/* PRZYCISK KOPIOWANIA */
+.member .name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin: 5px 0;
+}
+
+.member .role {
+    color: #1793d1;
+    font-size: 0.9em;
+    margin: 0;
+}
+
+/* ==========================================================================
+   6. SEKCJA STATUSU (Grupa ATM RR + Logo)
+   ========================================================================== */
+.status-box {
+    background: #111;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #222;
+    display: inline-block;
+    min-width: 320px;
+    margin-top: 15px;
+}
+
+.project-info {
+    font-size: 0.95em;
+    color: #aaa;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+#server-status {
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.status-section img {
+    transition: transform 0.3s ease;
+    max-width: 100%; /* zapobiega rozjeżdżaniu na małych ekranach */
+}
+
+.status-section img:hover {
+    transform: scale(1.05); /* lekki efekt uniesienia logo po najechaniu */
+}
+
+/* ==========================================================================
+   7. WIDŻETY, PRZYCISKI I KROPKA STATUSU
+   ========================================================================== */
 .copy-btn {
     background: #1793d1;
     color: white;
@@ -137,16 +207,30 @@ body {
     border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
-    margin: 20px auto;
+    margin: 20px auto 0 auto;
     display: block;
     transition: 0.3s;
 }
 
-.copy-btn:hover { background: #1272a3; transform: scale(1.05); }
+.copy-btn:hover { 
+    background: #1272a3; 
+    transform: scale(1.05); 
+}
 
-/* STATUS I INNE */
-.arch-blue { color: #1793d1; font-weight: bold; }
-.dot { height: 12px; width: 12px; border-radius: 50%; display: inline-block; animation: pulse 2s infinite; margin-right: 5px; }
+.arch-blue { 
+    color: #1793d1; 
+    font-weight: bold; 
+}
+
+.dot { 
+    height: 12px; 
+    width: 12px; 
+    border-radius: 50%; 
+    display: inline-block; 
+    animation: pulse 2s infinite; 
+    background-color: #555; /* Domyślny szary przed pobraniem statusu z JS */
+    transition: background-color 0.3s ease;
+}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 1; }
@@ -154,4 +238,33 @@ body {
     100% { transform: scale(1); opacity: 1; }
 }
 
-footer { padding: 50px; opacity: 0.7; }
+/* ==========================================================================
+   8. STOPKA i RESPONSYWNOŚĆ (RWD)
+   ========================================================================== */
+footer { 
+    padding: 50px; 
+    opacity: 0.7; 
+}
+
+/* Dostosowanie do ekranów smartfonów */
+@media (max-width: 768px) {
+    .side-nav {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    .nav-btn {
+        min-width: auto;
+        flex: 1;
+        max-width: 180px;
+    }
+    .hero {
+        padding: 40px 20px;
+    }
+    .services, .status-section, .team {
+        padding: 20px;
+        margin: 20px 10px !important;
+    }
+}
