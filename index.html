@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eksii_yt | Arch User, VoIP & IPTV Specialist</title>
+    <title>Eksii_yt | IPTV & Minecraft Server Specialist</title>
     <link rel="icon" type="image/png" href="https://i.imageupload.app/a471dbc64d25edc2cd56.png">
     <link rel="stylesheet" href="style.css">
     
-    <meta name="description" content="Strona osobista Eksii_yt - Specjalista FreePBX, IPTV, Zgemma H8.2H i fanatyk Arch Linux.">
+    <meta name="description" content="Strona osobista Eksii_yt - IPTV, Zgemma H8.2H oraz serwery Minecraft.">
     <meta property="og:title" content="Eksii_yt - Portfolio">
-    <meta property="og:description" content="Specjalista VoIP, IPTV & pasjonat Arch Linux. Współtwórca ATM Rozrywka: REWORK!">
+    <meta property="og:description" content="Współtwórca ATM Rozrywka: REWORK & Technik serwerów Minecraft!">
     <meta property="og:image" content="https://i.imageupload.app/a471dbc64d25edc2cd56.png">
     <meta property="og:url" content="https://eksii.online">
     <meta name="theme-color" content="#1793d1">
@@ -35,19 +35,15 @@
     </header>
 
     <section class="services">
-        <h2>Czym się zajmuję?</h2>
+        <h2>Moje Projekty & Kompetencje</h2>
         <div class="card-grid">
             <div class="card">
-                <h3>VoIP & FreePBX</h3>
-                <p>Konfiguracja <b>FreePBX</b> oraz szeroko pojęta <b>iptelefonija</b>. Buduję stabilną infrastrukturę telefoniczną.</p>
+                <h3>ATM Rozrywka: REWORK</h3>
+                <p>Zarządzanie streamami, konfiguracja IPTV oraz sprawdzanie działania systemów na dekoderach <b>Zgemma H8.2H</b>.</p>
             </div>
             <div class="card">
-                <h3>IPTV & DVB-S2/T2</h3>
-                <p>Zarządzanie streamami i konfiguracja dekoderów, w tym zaawansowane testy na sprzęcie <b>Zgemma H8.2H</b> (OpenATV/Linux).</p>
-            </div>
-            <div class="card">
-                <h3>Arch Linux</h3>
-                <p>Pełna optymalizacja, terminal i zarządzanie systemem od podszewki. <b>I use Arch btw.</b></p>
+                <h3>Serwery Minecraft</h3>
+                <p>Tworzenie, konfiguracja i optymalizacja serwerów od strony technicznej. Wspieram projekty takie jak <b>Wiktowice</b>.</p>
             </div>
         </div>
     </section>
@@ -72,28 +68,37 @@
         <div style="margin-bottom: 15px;">
             <img src="https://i.imageupload.app/a471dbc64d25edc2cd56.png" alt="ATM:RR Logo" style="max-height: 80px; width: auto; vertical-align: middle;">
         </div>
-        <h3>Nasz główny projekt (grupaatmrr.org.pl)</h3>
+        <h3>Główny projekt (grupaatmrr.org.pl)</h3>
         <div class="status-box">
             <p style="display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Courier New', monospace;">
-                <span class="dot" id="status-dot"></span>
-                <span id="server-status">Ładowanie danych...</span>
+                <span class="dot" id="status-dot-atm"></span>
+                <span id="server-status-atm">Ładowanie danych...</span>
             </p>
-            <p class="project-info">ATM Rozrywka: REWORK — Reaktywacja legendarnego kanału w formie IPTV!</p>
-            <button onclick="copyURL()" class="copy-btn">Kopiuj adres strony</button>
-            <div id="copy-msg" style="display:none; color:#2ecc71; font-size:0.9em; margin-top:10px;">Skopiowano!</div>
+            <p class="project-info">ATM Rozrywka: REWORK — Reaktywacja kanału telewizyjnego w formie IPTV!</p>
+            <button onclick="copyURL('grupaatmrr.org.pl')" class="copy-btn">Kopiuj adres strony</button>
         </div>
+
+        <hr style="border: 0; border-top: 1px solid #333; margin: 30px 0;">
+
+        <h3>Serwer MC Wiktowice</h3>
+        <div class="status-box">
+            <p style="display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Courier New', monospace;">
+                <span class="dot" id="status-dot-mc"></span>
+                <span id="server-status-mc">Sprawdzanie statusu...</span>
+            </p>
+            <p class="project-info" id="mc-players">Graczy online: ?</p>
+            <button onclick="copyURL('mc.miastowiktowice.pl')" class="copy-btn">Kopiuj IP Serwera</button>
+        </div>
+        <div id="copy-msg" style="display:none; color:#2ecc71; font-size:0.9em; margin-top:10px; text-align:center;">Skopiowano do schowka!</div>
     </section>
 
     <footer>
         <p>&copy; 2026 Eksii_yt. Wszystkie prawa zastrzeżone.</p>
-        <div style="font-family: 'Courier New', monospace; font-size: 0.8em; color: #555;">
-            [eksii@arch-web ~]$ uptime: <span id="uptime-val">153 days, 4:21</span>
-        </div>
     </footer>
 
     <script>
         // 1. Maszyna do pisania
-        const subtitleText = "VoIP Specialist | IPTV & Zgemma Expert | Arch Linux User";
+        const subtitleText = "IPTV Expert | Zgemma & Network Configure | Minecraft Tech";
         let charIndex = 0;
         function typeWriter() {
             if (charIndex < subtitleText.length) {
@@ -103,41 +108,67 @@
             }
         }
 
-        // 2. Kopiowanie URL
-        function copyURL() {
-            navigator.clipboard.writeText("grupaatmrr.org.pl").then(() => {
+        // 2. Uniwersalne kopiowanie
+        function copyURL(text) {
+            navigator.clipboard.writeText(text).then(() => {
                 const msg = document.getElementById("copy-msg");
-                msg.style.display = "inline";
+                msg.style.display = "block";
                 setTimeout(() => { msg.style.display = "none"; }, 2000);
             });
         }
 
-        // 3. Status strony projektu (Ping przez publiczne API)
-        async function updateStatus() {
-            const statusDot = document.getElementById('status-dot');
-            const statusText = document.getElementById('server-status');
+        // 3. Statusy na żywo
+        async function updateStatuses() {
+            // A. Status strony ATM
             try {
                 const res = await fetch('https://api.microlink.io?url=https://grupaatmrr.org.pl');
+                const dot = document.getElementById('status-dot-atm');
+                const text = document.getElementById('server-status-atm');
                 if (res.ok) {
-                    statusText.innerText = "STRONA DZIAŁA";
-                    statusText.style.color = "#2ecc71";
-                    statusDot.style.backgroundColor = "#2ecc71";
+                    text.innerText = "STRONA DZIAŁA";
+                    text.style.color = "#2ecc71";
+                    dot.style.backgroundColor = "#2ecc71";
                 } else {
-                    statusText.innerText = "PRZERWA TECHNICZNA";
-                    statusText.style.color = "#e74c3c";
-                    statusDot.style.backgroundColor = "#e74c3c";
+                    text.innerText = "PRZERWA TECHNICZNA";
+                    text.style.color = "#e74c3c";
+                    dot.style.backgroundColor = "#e74c3c";
                 }
-            } catch (e) { 
-                statusText.innerText = "ONLINE (SPRAWDŹ STRONĘ)";
-                statusText.style.color = "#2ecc71";
-                statusDot.style.backgroundColor = "#2ecc71";
+            } catch (e) {
+                document.getElementById('server-status-atm').innerText = "ONLINE";
+                document.getElementById('server-status-atm').style.color = "#2ecc71";
+                document.getElementById('status-dot-atm').style.backgroundColor = "#2ecc71";
+            }
+
+            // B. Status serwera Minecraft Wiktowice
+            try {
+                const res = await fetch('https://api.mcstatus.io/v2/status/java/mc.miastowiktowice.pl');
+                const data = await res.json();
+                const dot = document.getElementById('status-dot-mc');
+                const text = document.getElementById('server-status-mc');
+                const players = document.getElementById('mc-players');
+                
+                if (data.online) {
+                    text.innerText = "SERWER DZIAŁA";
+                    text.style.color = "#2ecc71";
+                    dot.style.backgroundColor = "#2ecc71";
+                    players.innerText = `Graczy online: ${data.players.online} / ${data.players.max}`;
+                } else {
+                    text.innerText = "OFFLINE";
+                    text.style.color = "#e74c3c";
+                    dot.style.backgroundColor = "#e74c3c";
+                    players.innerText = "Graczy online: 0";
+                }
+            } catch (e) {
+                document.getElementById('server-status-mc').innerText = "BRAK DANYCH (OFFLINE)";
+                document.getElementById('server-status-mc').style.color = "#e74c3c";
+                document.getElementById('status-dot-mc').style.backgroundColor = "#e74c3c";
             }
         }
 
         window.onload = () => {
             document.querySelector(".subtitle").innerHTML = "";
             typeWriter();
-            updateStatus();
+            updateStatuses();
         };
     </script>
 </body>
