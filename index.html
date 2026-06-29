@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eksii_yt | Arch User & VoIP Specialist</title>
-    <link rel="icon" type="image/png" href="https://imgupload.pl/images/2026/01/13/logo.png">
+    <title>Eksii_yt | Arch User, VoIP & IPTV Specialist</title>
+    <link rel="icon" type="image/png" href="https://i.imageupload.app/a471dbc64d25edc2cd56.png">
     <link rel="stylesheet" href="style.css">
     
-    <meta name="description" content="Strona osobista Eksii_yt - Specjalista FreePBX, iptelefonija i fanatyk Arch Linux.">
+    <meta name="description" content="Strona osobista Eksii_yt - Specjalista FreePBX, IPTV, Zgemma H8.2H i fanatyk Arch Linux.">
     <meta property="og:title" content="Eksii_yt - Portfolio">
-    <meta property="og:description" content="Specjalista VoIP & pasjonat Arch Linux. Sprawdź moje projekty i status serwera!">
-    <meta property="og:image" content="https://imgupload.pl/images/2026/01/13/logo.png">
+    <meta property="og:description" content="Specjalista VoIP, IPTV & pasjonat Arch Linux. Współtwórca ATM Rozrywka: REWORK!">
+    <meta property="og:image" content="https://i.imageupload.app/a471dbc64d25edc2cd56.png">
     <meta property="og:url" content="https://eksii.online">
     <meta name="theme-color" content="#1793d1">
 </head>
@@ -18,9 +18,9 @@
     <div class="loader-bar"></div>
 
     <div class="side-nav">
-        <a href="https://discord.gg/QfQzJdQVjA" target="_blank" class="nav-btn discord">
+        <a href="https://discord.com/invite/gJcX6bzxFN" target="_blank" class="nav-btn discord">
             <img src="https://cdn.simpleicons.org/discord/white" class="icon-fix" alt="Discord">
-            Discord Personal
+            Discord Projektu
         </a>
         <a href="https://youtube.com/@Eksii_yt" target="_blank" class="nav-btn youtube">
             <img src="https://cdn.simpleicons.org/youtube/white" class="icon-fix" alt="YouTube">
@@ -29,7 +29,7 @@
     </div>
 
     <header class="hero">
-        <img src="https://mc-heads.net/avatar/piotrr14/150" alt="Avatar" class="avatar">
+        <img src="https://i.imageupload.app/fb2dc1fed1628076e094.png" alt="Avatar Eksii_YT" class="avatar">
         <h1>Siemano, jestem Eksii!</h1>
         <p class="subtitle"></p>
     </header>
@@ -39,44 +39,47 @@
         <div class="card-grid">
             <div class="card">
                 <h3>VoIP & FreePBX</h3>
-                <p>Konfiguracja <b>FreePBX</b> oraz <b>iptelefonija</b>. Buduję stabilną infrastrukturę telefoniczną.</p>
+                <p>Konfiguracja <b>FreePBX</b> oraz szeroko pojęta <b>iptelefonija</b>. Buduję stabilną infrastrukturę telefoniczną.</p>
+            </div>
+            <div class="card">
+                <h3>IPTV & DVB-S2/T2</h3>
+                <p>Zarządzanie streamami i konfiguracja dekoderów, w tym zaawansowane testy na sprzęcie <b>Zgemma H8.2H</b> (OpenATV/Linux).</p>
             </div>
             <div class="card">
                 <h3>Arch Linux</h3>
                 <p>Pełna optymalizacja, terminal i zarządzanie systemem od podszewki. <b>I use Arch btw.</b></p>
             </div>
-            <div class="card">
-                <h3>Zarządzanie</h3>
-                <p>Administracja serwerami Minecraft i dbanie o techniczną stronę projektów online.</p>
-            </div>
         </div>
     </section>
 
     <section class="team">
-        <h3>Ekipa projektowa</h3>
+        <h3>Grupa ATM RR – Ekipa projektowa</h3>
         <div class="team-grid">
             <div class="member">
-                <img src="https://mc-heads.net/avatar/piotrr14/100" alt="piotrr14">
-                <p class="name">piotrr14</p>
+                <img src="https://i.imageupload.app/621a995cb1bf4d964854.webp" alt="Kacpergam123">
+                <p class="name">Kacpergam123</p>
                 <p class="role">Właściciel</p>
             </div>
             <div class="member">
-                <img src="https://mc-heads.net/avatar/Steve/100" alt="Admin2">
-                <p class="name">Steve</p>
-                <p class="role">Admin</p>
+                <img src="https://i.imageupload.app/fb2dc1fed1628076e094.png" alt="Eksii">
+                <p class="name">Eksii</p>
+                <p class="role">Współwłaściciel</p>
             </div>
         </div>
     </section>
 
     <section class="status-section">
-        <h3>Mój główny projekt (acmfg.pl)</h3>
+        <div style="margin-bottom: 15px;">
+            <img src="https://i.imageupload.app/a471dbc64d25edc2cd56.png" alt="ATM:RR Logo" style="max-height: 80px; width: auto; vertical-align: middle;">
+        </div>
+        <h3>Nasz główny projekt (grupaatmrr.org.pl)</h3>
         <div class="status-box">
             <p style="display: flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Courier New', monospace;">
                 <span class="dot" id="status-dot"></span>
                 <span id="server-status">Ładowanie danych...</span>
             </p>
-            <p class="players">Graczy online: <span id="player-count">?</span></p>
-            <button onclick="copyIP()" class="copy-btn">Kopiuj IP serwera</button>
+            <p class="project-info">ATM Rozrywka: REWORK — Reaktywacja legendarnego kanału w formie IPTV!</p>
+            <button onclick="copyURL()" class="copy-btn">Kopiuj adres strony</button>
             <div id="copy-msg" style="display:none; color:#2ecc71; font-size:0.9em; margin-top:10px;">Skopiowano!</div>
         </div>
     </section>
@@ -90,7 +93,7 @@
 
     <script>
         // 1. Maszyna do pisania
-        const subtitleText = "Specjalista VoIP | Arch Linux User | System Admin";
+        const subtitleText = "VoIP Specialist | IPTV & Zgemma Expert | Arch Linux User";
         let charIndex = 0;
         function typeWriter() {
             if (charIndex < subtitleText.length) {
@@ -100,23 +103,35 @@
             }
         }
 
-        // 2. Kopiowanie IP
-        function copyIP() {
-            navigator.clipboard.writeText("acmfg.pl").then(() => {
+        // 2. Kopiowanie URL
+        function copyURL() {
+            navigator.clipboard.writeText("grupaatmrr.org.pl").then(() => {
                 const msg = document.getElementById("copy-msg");
                 msg.style.display = "inline";
                 setTimeout(() => { msg.style.display = "none"; }, 2000);
             });
         }
 
-        // 3. Status serwera
+        // 3. Status strony projektu (Ping przez publiczne API)
         async function updateStatus() {
+            const statusDot = document.getElementById('status-dot');
+            const statusText = document.getElementById('server-status');
             try {
-                const res = await fetch('https://api.mcstatus.io/v2/status/java/acmfg.pl');
-                const data = await res.json();
-                document.getElementById('server-status').innerText = data.online ? "ONLINE" : "OFFLINE";
-                document.getElementById('player-count').innerText = data.online ? data.players.online : "0";
-            } catch (e) { console.error("MC API Error"); }
+                const res = await fetch('https://api.microlink.io?url=https://grupaatmrr.org.pl');
+                if (res.ok) {
+                    statusText.innerText = "STRONA DZIAŁA";
+                    statusText.style.color = "#2ecc71";
+                    statusDot.style.backgroundColor = "#2ecc71";
+                } else {
+                    statusText.innerText = "PRZERWA TECHNICZNA";
+                    statusText.style.color = "#e74c3c";
+                    statusDot.style.backgroundColor = "#e74c3c";
+                }
+            } catch (e) { 
+                statusText.innerText = "ONLINE (SPRAWDŹ STRONĘ)";
+                statusText.style.color = "#2ecc71";
+                statusDot.style.backgroundColor = "#2ecc71";
+            }
         }
 
         window.onload = () => {
